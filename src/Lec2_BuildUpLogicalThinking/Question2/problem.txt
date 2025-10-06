@@ -1,3 +1,5 @@
+Pattern-2: Right-Angled Triangle Pattern
+
 Problem Statement: Given an integer N, print the following pattern :
 
 Examples:

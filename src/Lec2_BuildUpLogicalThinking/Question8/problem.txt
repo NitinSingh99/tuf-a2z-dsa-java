@@ -1,0 +1,18 @@
+Pattern - 8: Inverted Star Pyramid
+
+Examples:
+
+Input Format: N = 3
+Result:
+*****
+ ***
+  *
+
+Input Format: N = 6
+Result:
+***********
+ *********
+  *******
+   *****
+    ***
+     *
