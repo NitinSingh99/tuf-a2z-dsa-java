@@ -38,7 +38,7 @@ The A2Z DSA Course covers everything from basics to advanced topics:
 
 ```
 src/\
-├── Lec2_BuildUpLogicalThinking/\
+├── step1.lec2/\
 │ ├── Question1/Q1.java\
 │ ├── Question2/Q2.java\
 │ └── ...\
@@ -58,8 +58,8 @@ Each folder contains:
 Compile a question from the terminal:
 
 ```bash
-javac -d out src/Lec2_BuildUpLogicalThinking/Question3/Q3.java
-java -cp out Lec2_BuildUpLogicalThinking.Question3.Q3
+javac -d out src/step1.lec2/Question3/Q3.java
+java -cp out step1.lec2.Question3.Q3
 ```
 ## 💻 Language
 
