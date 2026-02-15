@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class solution {
     public static void main(String[] args) {
         int[] arr = {13, 46, 24, 52, 20, 9};
-        selectionSort(arr);
+        selectionSort2(arr);
     }
 
     private static void selectionSort(int[] arr) {
@@ -22,5 +22,22 @@ public class solution {
             arr[minIndex] = temp;
         }
         System.out.print(Arrays.toString(arr));
+    }
+
+    //Practice
+    private static void selectionSort2(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n; i++) {
+            int min = arr[i];
+            for (int j = i; j < n; j++) {
+                if (arr[j] < min) {
+                    int temp = min;
+                    min = arr[j];
+                    arr[j] = temp;
+                }
+            }
+            arr[i] = min;
+        }
+        System.out.println(Arrays.toString(arr));
     }
 }
