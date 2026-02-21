@@ -16,7 +16,7 @@ public class Q14 {
         }
     }
 
-    //Revision 1
+    //Revision 1 - O
     private static void printPattern_rev(int N) {
 
         for (int i = 1; i <= N; i++) {
