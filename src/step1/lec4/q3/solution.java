@@ -2,8 +2,8 @@ package step1.lec4.q3;
 
 public class solution {
     public static void main(String[] args){
-        int N = 122322178;
-        checkPalindrome(N);
+        int N = 123321;
+        checkPalindrome_rev(N);
     }
 
     private static void checkPalindrome(int N){
@@ -25,5 +25,20 @@ public class solution {
         }
 
         return newNumber;
+    }
+
+
+    // Revisit 1 -- O
+    private static void checkPalindrome_rev(int N){
+        int reversed = 0;
+        int no = N;
+
+        while(no>0){
+            int ld = no%10;
+            reversed = (reversed*10) + ld;
+            no = no/10;
+        }
+
+        System.out.println(reversed == N);
     }
 }
