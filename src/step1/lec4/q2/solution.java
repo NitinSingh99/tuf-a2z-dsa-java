@@ -3,7 +3,7 @@ package step1.lec4.q2;
 public class solution {
     public static void main(String[] args){
         int N = 569600;
-        reverse(N);
+        reverse_rev(N);
     }
 
     private static void reverse(int N){
@@ -15,5 +15,16 @@ public class solution {
             N = N/10;
         }
         System.out.println(answer);
+    }
+
+    private static void reverse_rev(int N){
+        int ans = 0;
+        int lastDig;
+        while(N>0){
+            lastDig = N%10;
+            ans = (ans*10)+lastDig;
+            N= N/10;
+        }
+        System.out.println(ans);
     }
 }
