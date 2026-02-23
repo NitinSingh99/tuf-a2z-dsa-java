@@ -2,8 +2,8 @@ package step1.lec4.q5;
 
 public class solution {
     public static void main(String[] args){
-        int N = 371;
-        boolean result = check(N);
+        int N = 153;
+        boolean result = check_rev(N);
         System.out.print(result);
     }
 
@@ -19,6 +19,20 @@ public class solution {
         }
 
         return sum == N;
+    }
+
+    //Revisit 1 -- O
+    private static boolean check_rev(int n){
+        int digits = (int) (Math.log10(n) + 1);
+        int no = n;
+        int armNo = 0;
+        while(no>0){
+            int ld = no%10;
+            armNo = (int) (armNo + Math.pow(ld, digits));
+            no = no/10;
+        }
+
+        return n == armNo;
     }
 
 }

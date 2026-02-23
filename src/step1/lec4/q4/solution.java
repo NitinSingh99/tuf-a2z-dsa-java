@@ -44,6 +44,7 @@ public class solution {
         return a;
     }
 
+    //Revisit 1 -- X
     private static int gcd_rev(int a, int b){
         int temp;
         while(b!=0){
