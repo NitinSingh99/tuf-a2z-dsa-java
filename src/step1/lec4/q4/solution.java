@@ -5,7 +5,7 @@ public class solution {
         int num1 = 5;
         int num2 = 20;
 
-        int result = gcd_euclidean(num1, num2);
+        int result = gcd_rev(num1, num2);
         System.out.print("GCD = " + result);
     }
 
@@ -38,6 +38,17 @@ public class solution {
         while(b!=0){
             temp = b;
             b = a % b;
+            a = temp;
+        }
+
+        return a;
+    }
+
+    private static int gcd_rev(int a, int b){
+        int temp;
+        while(b!=0){
+            temp = b;
+            b = a%b;
             a = temp;
         }
 
