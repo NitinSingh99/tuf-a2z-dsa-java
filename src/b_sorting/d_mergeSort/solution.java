@@ -10,6 +10,11 @@ public class solution {
         System.out.print(Arrays.toString(arr));
     }
 
+    /*
+    Attempt: 1
+    Status: SOLVED
+    Confidence: 6/10
+    */
     private static void mergeSort(int[] arr, int low, int high){
         if(low>=high) return;
         int mid = (low+high)/2;
