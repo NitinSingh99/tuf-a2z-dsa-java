@@ -32,6 +32,7 @@ public class solution {
     Attempt: 2
     Status: SOLVED
     Confidence: 7/10
+    Date: 28-02-2026
     */
     private static void bubbleSort2(int[] arr) {
         for (int i = arr.length; i > 0; i--) {
