@@ -6,11 +6,11 @@ This repository documents my journey of learning **Data Structures and Algorithm
 
 ## 📚 Course Structure
 
-The A2Z DSA Course covers everything from basics to advanced topics:
+The A2Z DSA Course covers everything from a_basics to advanced topics:
 
-- **Step 1:** Learn the basics
-- **Step 2:** Learn important sorting techniques
-- **Step 3:** Solve problems on arrays
+- **Step 1:** Learn the a_basics
+- **Step 2:** Learn important b_sorting techniques
+- **Step 3:** Solve problems on c_arrays
 - **Step 4:** Binary search
 - **Step 5:** Strings
 - **Step 6:** Linked lists
@@ -38,7 +38,7 @@ The A2Z DSA Course covers everything from basics to advanced topics:
 
 ```
 src/\
-├── step1.lec2/\
+├── a_basics.a_logicalThinking/\
 │ ├── Question1/Q1.java\
 │ ├── Question2/Q2.java\
 │ └── ...\
@@ -58,8 +58,8 @@ Each folder contains:
 Compile a question from the terminal:
 
 ```bash
-javac -d out src/step1.lec2/Question3/Q3.java
-java -cp out step1.lec2.Question3.Q3
+javac -d out src/a_basics.a_logicalThinking/Question3/Q3.java
+java -cp out a_basics.a_logicalThinking.Question3.Q3
 ```
 ## 💻 Language
 
