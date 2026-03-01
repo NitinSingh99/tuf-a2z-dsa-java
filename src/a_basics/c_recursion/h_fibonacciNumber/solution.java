@@ -6,7 +6,7 @@ public class solution {
     public static void main(String[] args) {
         int N = 5;
 //        printFib(N);
-        Fib(N);
+        fib(N);
     }
 
     //Brute Force
@@ -27,12 +27,30 @@ public class solution {
     }
 
     //Better Sliding Window Approach
-    private static void Fib(int N){
+    private static void Fib(int N) {
         int last = 0;
         int slast = 1;
         int cur;
         System.out.print("0 1 ");
-        for(int i=2; i<=N; i++){
+        for (int i = 2; i <= N; i++) {
+            cur = last + slast;
+            last = slast;
+            slast = cur;
+            System.out.print(cur + " ");
+        }
+    }
+
+    /*
+    Attempt: 2
+    Status: FAILED
+    Confidence: 5/10
+    */
+    private static void fib(int N) {
+        int last = 0;
+        int slast = 1;
+        int cur;
+        System.out.print("0 1 ");
+        for(int i =2; i<=N; i++){
             cur = last + slast;
             last = slast;
             slast = cur;
