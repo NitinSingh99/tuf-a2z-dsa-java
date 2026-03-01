@@ -3,6 +3,14 @@ package c_arrays.a_easy.b_secondLargestEl;
 public class solution {
     public static void main(String[] args) {
         int[] arr = {1, 2, 4, 7, 7, 5};
+        sLargest2(arr);
+    }
+    /*
+    Attempt: 1
+    Status: FAILED
+    Confidence: 6/10
+    */
+    private static void sLargest(int[] arr){
         int small = Integer.MAX_VALUE;
         int second_small = Integer.MAX_VALUE;
         int large = Integer.MIN_VALUE;
@@ -27,5 +35,35 @@ public class solution {
         System.out.println("large:" + large);
         System.out.println("second_small:" + second_small);
         System.out.println("second_large:" + second_large);
+    }
+
+    /*
+    Attempt: 2
+    Status: FAILED
+    Confidence: 7/10
+    */
+    private static void sLargest2(int[] arr){
+        int small = Integer.MAX_VALUE;
+        int sSmall = Integer.MAX_VALUE;
+        int large = Integer.MIN_VALUE;
+        int sLarge = Integer.MIN_VALUE;
+
+        for(int i = 0; i<arr.length; i++){
+            small = Math.min(small, arr[i]);
+            large = Math.max(large, arr[i]);
+        }
+
+        for(int i = 0; i<arr.length; i++){
+            if(arr[i]<sSmall && arr[i] != small){
+                sSmall = arr[i];
+            }
+
+            if(arr[i]>sLarge && arr[i] != large){
+                sLarge = arr[i];
+            }
+        }
+
+        System.out.println(sSmall);
+        System.out.println(sLarge);
     }
 }
