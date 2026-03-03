@@ -1,4 +1,4 @@
-package c_arrays.a_easy.rotateArrayByK;
+package c_arrays.a_easy.f_rotateArrayByK;
 
 import java.util.Arrays;
 

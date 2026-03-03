@@ -1,4 +1,4 @@
-package c_arrays.a_easy.leftRotateArrayByOne;
+package c_arrays.a_easy.e_leftRotateArrayByOne;
 
 import java.util.Arrays;
 
