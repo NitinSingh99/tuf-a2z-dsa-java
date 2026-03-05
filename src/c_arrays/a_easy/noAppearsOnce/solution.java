@@ -4,7 +4,7 @@ import java.util.HashMap;
 public class solution {
     public static void main(String[] args){
         int[] nums = {4,1,2,1,2};
-        find(nums);
+        find_opt(nums);
     }
 
     //My solution
@@ -18,5 +18,14 @@ public class solution {
                 System.out.println(entry.getKey());
             }
         }
+    }
+
+    //Optimal Solution using XOR
+    private static void find_opt(int[] nums){
+        int xor = 0;
+        for(int i : nums){
+            xor ^= i;
+        }
+        System.out.println(xor);
     }
 }
