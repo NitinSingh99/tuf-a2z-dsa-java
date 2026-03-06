@@ -1,4 +1,4 @@
-package c_arrays.a_easy.noAppearsOnce;
+package c_arrays.a_easy.k_noAppearsOnce;
 import java.util.Map;
 import java.util.HashMap;
 public class solution {
