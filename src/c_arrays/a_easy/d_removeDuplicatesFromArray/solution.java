@@ -38,7 +38,7 @@ public class solution {
     Attempt: 2
     Status: --
     Confidence: 6/10
-    Date: 01-03-26
+    Date: 07-03-26
     */
     private static int removeDup2(int[] arr){
         if(arr.length == 0) return 0;
