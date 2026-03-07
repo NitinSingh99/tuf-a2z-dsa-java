@@ -3,7 +3,7 @@ package c_arrays.a_easy.b_secondLargestEl;
 public class solution {
     public static void main(String[] args) {
         int[] arr = {1, 2, 4, 7, 7, 5};
-        sLargest2(arr);
+        sLargest3(arr);
     }
     /*
     Attempt: 1
@@ -65,5 +65,30 @@ public class solution {
 
         System.out.println(sSmall);
         System.out.println(sLarge);
+    }
+
+    /*
+    Attempt: 3
+    Status: SOLVED
+    Confidence: 8/10
+    */
+    private static void sLargest3(int[] arr){
+        int max = Integer.MIN_VALUE, sMax = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE, sMin = Integer.MAX_VALUE;
+        for(int i : arr){
+            max = Math.max(max, i);
+            min = Math.min(min, i);
+        }
+
+        for(int j: arr){
+            if (j != max) {
+                sMax = Math.max(sMax, j);
+            }
+            if(j!=min){
+                sMin = Math.min(sMin, j);
+            }
+        }
+        System.out.println(sMax);
+        System.out.println(sMin);
     }
 }
