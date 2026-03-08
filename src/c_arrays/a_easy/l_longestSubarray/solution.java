@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class solution {
     public static void main(String[] args) {
-        int[] arr = {1, -1, 5, -2, 3};
-        int k = 3;
-        longestSubarray(arr, k);
+        int[] arr = {10, 5, 2, 7, 1, 9};
+        int k = 15;
+        longestSub_rev(arr, k);
     }
 
     //fails for certain cases with negative elements int[] arr = {1, -1, 5, -2, 3}; k=3;
@@ -18,19 +18,19 @@ public class solution {
         int maxLen = 0;
         int n = arr.length;
 
-        while(right<n){
+        while (right < n) {
 
-            while(left<=right && sum>k){
+            while (left <= right && sum > k) {
                 sum -= arr[left];
                 left++;
             }
 
-            if(sum == k){
-                maxLen = Math.max(maxLen, right-left+1);
+            if (sum == k) {
+                maxLen = Math.max(maxLen, right - left + 1);
             }
 
             right++;
-            if(right<n){
+            if (right < n) {
                 sum += arr[right];
             }
         }
@@ -38,24 +38,47 @@ public class solution {
         System.out.println(maxLen);
     }
 
-    private static void longestSubarray(int[] arr, int k){
+    private static void longestSubarray(int[] arr, int k) {
         Map<Integer, Integer> map = new HashMap<>();
         int sum = 0;
         int maxLen = 0;
-        for(int i = 0; i<arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
-            if(sum == k){
-                maxLen = i+1;
+            if (sum == k) {
+                maxLen = i + 1;
             }
-            if(map.containsKey(sum-k)){
-                int len = i - map.get(sum-k);
+            if (map.containsKey(sum - k)) {
+                int len = i - map.get(sum - k);
                 maxLen = Math.max(maxLen, len);
             }
-            if(!map.containsKey(sum)){
+            if (!map.containsKey(sum)) {
                 map.put(sum, i);
             }
         }
 
+        System.out.println(maxLen);
+    }
+
+    /*
+    Attempt: 2
+    Status: SOLVED
+    Confidence: 8/10
+    */
+    private static void longestSub_rev(int[] arr, int k) {
+        int i = 0, j = 0;
+        int sum = 0, maxLen = 0;
+        while (j < arr.length) {
+            sum += arr[j];
+            while (i <= j && sum > k) {
+                sum -= arr[i];
+                i++;
+            }
+            if (sum == k) {
+                int len = j - i;
+                maxLen = Math.max(maxLen, len + 1);
+            }
+            j++;
+        }
         System.out.println(maxLen);
     }
 
