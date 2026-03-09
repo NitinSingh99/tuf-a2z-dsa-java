@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class solution {
     public static void main(String[] args) {
-        int[] arr = {10, 5, 2, 7, 1, 9};
-        int k = 15;
+        int[] arr = {1, -1, 5, -2, 3};
+        int k = 3;
         longestSub_rev(arr, k);
     }
 

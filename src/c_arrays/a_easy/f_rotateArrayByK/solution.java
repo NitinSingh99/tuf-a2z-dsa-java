@@ -72,6 +72,7 @@ public class solution {
     */
     private static void rotate_rev(int[] arr, int k,  String direction){
         if(arr.length == 0) return;
+        k = k % arr.length;
         if(direction.equals("right")){
             reverse_rev(arr, 0, arr.length-1);
             reverse_rev(arr, 0, k-1);
