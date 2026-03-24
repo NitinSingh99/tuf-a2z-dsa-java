@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class solution {
     public static void main(String[] args) {
         int[] arr = {1, 2, 0, 1, 0, 4, 0};
-        moveZero_rev(arr);
+        moveZero_rev2(arr);
     }
 
 
@@ -73,6 +73,34 @@ public class solution {
                 arr[zero] = arr[i];
                 arr[i] = temp;
                 zero++;
+            }
+        }
+
+        System.out.println(Arrays.toString(arr));
+    }
+
+    /*
+    Attempt: 3
+    Status: SOLVED
+    Confidence: 8/10
+    */
+    private static void moveZero_rev2(int[] arr){
+        int j = -1;
+        for(int i = 0; i<arr.length; i++){
+            if(arr[i] == 0){
+                j = i;
+                break;
+            }
+        }
+
+        if(j==-1) return;
+
+        for(int i = j; i<arr.length; i++){
+            if(arr[i] != 0){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                j++;
             }
         }
 
