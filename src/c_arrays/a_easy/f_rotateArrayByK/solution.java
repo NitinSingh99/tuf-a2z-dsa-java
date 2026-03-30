@@ -5,9 +5,7 @@ import java.util.Arrays;
 public class solution {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
-//        rotateRight(arr, 4);
-//        rotateLeft(arr, 2);
-        rotate_rev(arr, 2, "left");
+        rotate_rev2(arr, 2, "right");
     }
 
     //My solution (less efficient)
@@ -45,10 +43,10 @@ public class solution {
             reverse(arr, 0, n - 1);
             reverse(arr, 0, k - 1);
             reverse(arr, k, n - 1);
-        }else if(direction.equals("left")){
-            reverse(arr, 0, k-1);
-            reverse(arr, k, n-1);
-            reverse(arr, 0, n-1);
+        } else if (direction.equals("left")) {
+            reverse(arr, 0, k - 1);
+            reverse(arr, k, n - 1);
+            reverse(arr, 0, n - 1);
         }
 
         System.out.println(Arrays.toString(arr));
@@ -70,30 +68,59 @@ public class solution {
     Status: SOLVED
     Confidence: 7/10
     */
-    private static void rotate_rev(int[] arr, int k,  String direction){
-        if(arr.length == 0) return;
+    private static void rotate_rev(int[] arr, int k, String direction) {
+        if (arr.length == 0) return;
         k = k % arr.length;
-        if(direction.equals("right")){
-            reverse_rev(arr, 0, arr.length-1);
-            reverse_rev(arr, 0, k-1);
-            reverse_rev(arr, k, arr.length-1);
-        }else if(direction.equals("left")){
-            reverse_rev(arr, 0, k-1);
-            reverse_rev(arr, k, arr.length-1);
-            reverse_rev(arr, 0, arr.length-1);
+        if (direction.equals("right")) {
+            reverse_rev(arr, 0, arr.length - 1);
+            reverse_rev(arr, 0, k - 1);
+            reverse_rev(arr, k, arr.length - 1);
+        } else if (direction.equals("left")) {
+            reverse_rev(arr, 0, k - 1);
+            reverse_rev(arr, k, arr.length - 1);
+            reverse_rev(arr, 0, arr.length - 1);
         }
 
         System.out.println(Arrays.toString(arr));
 
     }
 
-    private static void reverse_rev(int[] arr, int start, int end){
-        while(start<end){
+    private static void reverse_rev(int[] arr, int start, int end) {
+        while (start < end) {
             int temp = arr[end];
             arr[end] = arr[start];
             arr[start] = temp;
             start++;
             end--;
+        }
+    }
+
+    /*
+    Attempt: 3
+    Status: SOLVED
+    Confidence: 7/10
+    */
+    private static void rotate_rev2(int[] arr, int k, String direction) {
+        if (k == 0) return;
+        if (direction == "left") {
+            reverse_rev(arr, 0, k - 1);
+            reverse_rev(arr, k, arr.length - 1);
+            reverse_rev(arr, 0, arr.length - 1);
+        } else if (direction == "right") {
+            reverse_rev2(arr, 0, arr.length - 1);
+            reverse_rev2(arr, 0, k - 1);
+            reverse_rev2(arr, k, arr.length - 1);
+        }
+            System.out.println(Arrays.toString(arr));
+    }
+
+    private static void reverse_rev2(int[] arr, int a, int b) {
+        while (a < b) {
+            int temp = arr[a];
+            arr[a] = arr[b];
+            arr[b] = temp;
+            a++;
+            b--;
         }
     }
 
