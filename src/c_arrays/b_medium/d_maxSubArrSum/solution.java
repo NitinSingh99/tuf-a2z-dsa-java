@@ -3,7 +3,7 @@ package c_arrays.b_medium.d_maxSubArrSum;
 public class solution {
     public static void main(String[] args) {
         int[] arr = {-2, -3, -7, -2, -10, -4};
-        maxSum_rev(arr);
+        maxSum_rev2(arr);
     }
 
     private static void maxSum(int[] arr) {
@@ -19,16 +19,28 @@ public class solution {
         System.out.println(max);
     }
 
-    private static void maxSum_rev(int[] arr){
+    private static void maxSum_rev(int[] arr) {
         int sum = 0, max = Integer.MIN_VALUE;
-        for(int num : arr){
+        for (int num : arr) {
             sum += num;
             max = Math.max(max, sum);
-            if(sum < 0){
+            if (sum < 0) {
                 sum = 0;
             }
         }
 
+        System.out.println(max);
+    }
+
+    private static void maxSum_rev2(int[] arr) {
+        int max = Integer.MIN_VALUE, sum = 0;
+        for (int i : arr) {
+            sum += i;
+            max = Math.max(max, sum);
+            if (sum < 0) {
+                sum = 0;
+            }
+        }
         System.out.println(max);
     }
 }
