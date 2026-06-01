@@ -3,7 +3,7 @@ package c_arrays.b_medium.f_stockBuySell;
 public class solution {
     public static void main(String[] args) {
         int[] arr = {7, 1, 5, 3, 6, 4};
-        buySell_rev2(arr);
+        buySell_rev3(arr);
     }
 
     private static void buySell(int[] arr) {
@@ -41,6 +41,20 @@ public class solution {
                 buy = arr[i];
             }else{
                 profit = Math.max(profit, arr[i] - buy);
+            }
+        }
+
+        System.out.println(profit);
+    }
+
+    private static void buySell_rev3(int[] arr){
+        int buy = arr[0];
+        int profit = 0;
+        for(int i : arr){
+            if(i<buy){
+                buy = i;
+            }else{
+                profit = Math.max(profit, i-buy);
             }
         }
 
