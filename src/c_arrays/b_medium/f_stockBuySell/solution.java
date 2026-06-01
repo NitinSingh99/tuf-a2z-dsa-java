@@ -47,4 +47,17 @@ public class solution {
         System.out.println(profit);
     }
 
+    private static void buySell_rev3(int[] arr){
+        int buy = arr[0];
+        int profit = 0;
+        for(int i : arr){
+            if(i<buy){
+                buy = i;
+            }else{
+                profit = Math.max(profit, i-buy);
+            }
+        }
+
+        System.out.println(profit);
+    }
 }
