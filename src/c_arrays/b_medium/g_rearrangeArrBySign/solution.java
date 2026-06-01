@@ -32,9 +32,4 @@ public class solution {
         }
         System.out.println(Arrays.toString(arr));
     }
-
-//    private static void rearrange(int[] arr){
-//        int n = arr.length;
-//
-//    }
 }
